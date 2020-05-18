@@ -1,3 +1,5 @@
+let db = require('../database/models');
+
 let seriesController = {
     home: function(req, res){
         res.render('home')
