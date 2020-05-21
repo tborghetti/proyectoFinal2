@@ -1,7 +1,8 @@
 let db = require('../database/models');
 let operadores = db.Sequelize.Op;
+var bcrypt = require('bcryptjs');
 // npm bcrypt js google requerir aca
-
+//corri en terminal npm install bcryptjs
 
 let usersController = {
     createUser: function(req, res) {
