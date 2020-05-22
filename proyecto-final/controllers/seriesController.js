@@ -1,4 +1,5 @@
 let db = require('../database/models');
+let sequelize = db.sequelize;
 
 let seriesController = {
     home: function(req, res){

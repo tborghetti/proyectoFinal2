@@ -1,4 +1,5 @@
 let db = require('../database/models');
+let sequelize = db.sequelize;
 let operadores = db.Sequelize.Op;
 var bcrypt = require('../node_modules/bcryptjs');
 // npm bcrypt requiero arriba
