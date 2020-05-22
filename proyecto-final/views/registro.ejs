@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
+    <!-- div para la alerta de error -->
+      <div class="error">
+    
+      </div>
+      <%- include('../partials/header') %>
+
+<body>
     <!-- ACA VA FORMULARIO DE REGISTRO -->
     <h1>Registrate</h1>
-    <form action="" method="post"></form>
+    <form action="/users/registro" method="post">
+        <div>
+            <label for="">Nombre</label>
+            <input type="text" name="name" value="" placeholder="Escriba aquí">
+        </div>
+        <div>
+            <label for="">Email</label>
+            <input type="email" name="email" value="" placeholder="Escriba aquí">
+        </div>
+        <div>
+            <label for="">Fecha de nacimiento (DD-MM-AAAA)</label>
+            <input type="email" name="email" value="" placeholder="Escriba aquí">
+        </div>
+        <div>
+            <label for="">Contraseña</label>
+            <input type="password" name="password" value="" placeholder="Escriba aquí">
+        </div>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <%- include('../partials/footer') %>
 </body>
+
 </html>
