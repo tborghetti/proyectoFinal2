@@ -3,7 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/registro.css">
+    <link rel="stylesheet" href="/stylesheets/home.css">
     <link rel="stylesheet" href="/stylesheets/HyF.css">
+    <script src="https://kit.fontawesome.com/6a7542e233.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
+    <script src="/javascripts/seriesxgenero.js" charset="utf-8"></script>
+    <script src="/javascripts/home.js" charset="utf-8"></script>
+    <script src="/javascripts/busquedaAvanzada.js" charset="utf-8"></script>
+    <script src="/javascripts/prevenirbusquedavacia.js" charset="utf-8"></script>
+  
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/slick.css"/>
+    <script type="text/javascript" src="/javascripts/slick.min.js"></script>
+  
+    <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre:400,500|Aleo:400,700|Arbutus+Slab|Bowlby+One+SC|EB+Garamond:400,500|Gilda+Display|Merriweather:300|Noto+Serif+SC:400,500|Roboto:100|Source+Serif+Pro|Special+Elite|Staatliches|Zilla+Slab:500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded:800|Bowlby+One+SC&display=swap" rel="stylesheet">
+  
 </head>
 <body>
     <!-- div para la alerta de error -->
@@ -14,28 +34,28 @@
 
 <body>
     <!-- ACA VA FORMULARIO DE REGISTRO -->
-    <h1>¡Registrate!</h1>
-    <form action="/users/registro" method="POST">
-        <div>
-            <label for="">Nombre</label>
-            <input type="text" name="name" value="" placeholder="Escriba aquí">
+    <h1 id="register">¡Registrate!</h1>
+    <form  action="/users/registro" method="POST">
+        <div >
+            <label for="">Nombre</label><br>
+            <input class="registro" type="text" name="name" value="" placeholder="Escriba aquí">
         </div>
-        <div>
-            <label for="">Email</label>
-            <input type="email" name="email" value="" placeholder="Escriba aquí">
+        <div >
+            <label for="">Email</label><br>
+            <input class="registro" type="email" name="email" value="" placeholder="Escriba aquí">
         </div>
-        <div>
-            <label for="">Fecha de nacimiento</label>
-            <input type="date" name="birthday" value="" placeholder="Escriba aquí">
+        <div >
+            <label for="">Fecha de nacimiento</label><br>
+            <input class="registro" type="date" name="birthday" value="" placeholder="Escriba aquí">
         </div>
-        <div>
-            <label for="">Contraseña</label>
-            <input type="password" name="password" value="" placeholder="Escriba aquí">
-        </div>
-        <input type="submit" value="Enviar">
+        <div >
+            <label for="">Contraseña</label><br>
+            <input class="registro" type="password" name="password" value="" placeholder="Escriba aquí">
+        </div >
+        <input class="enviar" type="submit" value="Enviar">
     </form>
 
-    <%- include('../partials/footer') %>
+     <%- include('../partials/footer') %>
 </body>
 
 </html>
