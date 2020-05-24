@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/registro.css">
+    <link rel="stylesheet" href="/stylesheets/login.css">
     <link rel="stylesheet" href="/stylesheets/home.css">
     <link rel="stylesheet" href="/stylesheets/HyF.css">
     <script src="https://kit.fontawesome.com/6a7542e233.js"></script>
@@ -20,9 +20,16 @@
     crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="/stylesheets/slick.css"/>
     <script type="text/javascript" src="/javascripts/slick.min.js"></script>
-  
-    <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre:400,500|Aleo:400,700|Arbutus+Slab|Bowlby+One+SC|EB+Garamond:400,500|Gilda+Display|Merriweather:300|Noto+Serif+SC:400,500|Roboto:100|Source+Serif+Pro|Special+Elite|Staatliches|Zilla+Slab:500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded:800|Bowlby+One+SC&display=swap" rel="stylesheet">
+
+    <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
+
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre:400,500|Aleo:400,700|Arbutus+Slab|Bowlby+One+SC|EB+Garamond:400,500|Gilda+Display|Merriweather:300|Noto+Serif+SC:400,500|Roboto:100|Source+Serif+Pro|Special+Elite|Staatliches|Zilla+Slab:500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded:800|Bowlby+One+SC&display=swap" rel="stylesheet">
   
 </head>
 <body>
@@ -46,28 +53,26 @@
       </header>
 
 
-    <!-- ACA VA FORMULARIO DE REGISTRO -->
-   <main class="mainRegistro">
-     <h1 id="register">¡Registrate!</h1>
-     <form  action="/users/registro" method="POST" class="registro">
-        <div >
-            <label for="">Nombre</label><br>
-            <input class="registro" type="text" name="name" value="" placeholder="Escriba aquí">
+    <!-- ACA VA FORMULARIO DE LOGIN -->
+   <main class="mainLogin">
+     <h1 id="register">LOGIN</h1>
+     <form class="login" action="" method="POST">
+         <!-- nombre de usuario -->
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                <input class="uk-input" type="text">
+            </div>
         </div>
-        <div >
-            <label for="">Email</label><br>
-            <input class="registro" type="email" name="email" value="" placeholder="Escriba aquí">
+    <!-- contraseña -->
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                <input class="uk-input" type="text">
+            </div>
         </div>
-        <div >
-            <label for="">Fecha de nacimiento</label><br>
-            <input class="registro" type="date" name="birthday" value="" placeholder="Escriba aquí">
-        </div>
-        <div >
-            <label for="">Contraseña</label><br>
-            <input class="registro" type="password" name="password" value="" placeholder="Escriba aquí">
-        </div >
-        <input class="enviar" type="submit" value="Enviar">
-     </form>
+    
+    </form>
     </main>
 
      <%- include('../partials/footer') %>

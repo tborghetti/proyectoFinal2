@@ -19,7 +19,10 @@ let usersController = {
         .then(()=> {
             res.send("Usuario creado")
         })
-    }
+    },
+    login: function(req,res){
+        res.render('login')
+    },
 }
 
 module.exports = usersController;

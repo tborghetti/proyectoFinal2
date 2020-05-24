@@ -10,4 +10,5 @@ router.get('/resultado', seriesController.resultado);
 router.get('/resultadoAvanzado', seriesController.resultadoAvanzado);
 
 
+
 module.exports = router;
