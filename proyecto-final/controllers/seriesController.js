@@ -1,4 +1,4 @@
-let db = require('../database/models');
+let db = require('../database/models/index');
 let sequelize = db.sequelize;
 
 let seriesController = {
@@ -10,6 +10,18 @@ let seriesController = {
     },
     infoxserie: function(req, res){
         res.render('infoxserie')
+    },
+    storeResenia: function(req,res){
+        let resenia = {
+            email:,
+            password:,
+            text:,
+            rating:
+        }
+        db.User.create(resenia)
+        .then(()=> {
+            res.send("Reseñia creado")
+        })
     },
     favoritas: function(req, res){
         res.render('favoritas')
