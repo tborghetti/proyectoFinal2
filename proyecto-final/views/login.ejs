@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/HyF.css">
+    <script src="https://kit.fontawesome.com/6a7542e233.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
+    <script src="/javascripts/seriesxgenero.js" charset="utf-8"></script>
+    <script src="/javascripts/home.js" charset="utf-8"></script>
+    <script src="/javascripts/busquedaAvanzada.js" charset="utf-8"></script>
+    <script src="/javascripts/prevenirbusquedavacia.js" charset="utf-8"></script>
+  
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/slick.css"/>
+    <script type="text/javascript" src="/javascripts/slick.min.js"></script>
+
+    <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
+
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre:400,500|Aleo:400,700|Arbutus+Slab|Bowlby+One+SC|EB+Garamond:400,500|Gilda+Display|Merriweather:300|Noto+Serif+SC:400,500|Roboto:100|Source+Serif+Pro|Special+Elite|Staatliches|Zilla+Slab:500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded:800|Bowlby+One+SC&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+<!-- div para la alerta de error -->
+      <div class="error">
+    
+      </div>
+      
+      <header>
+        <a class="head" href= "../veoVeo/home"><label for="">Inicio</label></a>
+      <h1>Veo<a href="../veoVeo/home"><img src="/images/logo.png" alt=""></a>Veo</h1>
+        <form class="form-buscador" action="./resultado" method="get" id="busqueda">
+          <input class="buscadorsecundario inputHidden" type="text" name="buscadorsecundario" placeholder="Buscador" value="">
+          <button type="submit">Enviar</button>
+          <i class="fas fa-search" id="lupita"></i>
+          <a href="../veoVeo/favoritas" ><i class="fas fa-heart"></i></a>
+          <a href="#offcanvas-derecho" uk-toggle><i class="fas fa-filter"></i></a>
+         <!--falta cambiar el href -->
+          <a href="../veoVeo/home" uk-toggle><i class="fas fa-users"></i></a>
+        </form>
+      </header>
+
+
+    <!-- ACA VA FORMULARIO DE LOGIN -->
+   <main class="mainLogin">
+     <h1 id="register">LOGIN</h1>
+     <form class="login" action="" method="POST">
+         <!-- nombre de usuario -->
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                <input class="uk-input" type="text">
+            </div>
+        </div>
+    <!-- contraseña -->
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                <input class="uk-input" type="text">
+            </div>
+        </div>
+    
+    </form>
+    </main>
+
+     <%- include('../partials/footer') %>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+*{box-sizing: border-box;}
+
+h1#register{
+    color: white;
+    text-align: center;
+    margin-bottom: 2%;
+}
+body{
+    color: white;
+}
+
+input.registro{
+    width: 35%;
+    height: 37px;
+    border-radius: 8px;
+    margin: 0.5%;
+}
+input.enviar{
+    width: 15%;
+    height: 30px;
+    border-radius: 8px;
+    margin: 1.5%;
+    background-color: yellow;
+    font-weight: bold;
+}
+form.login{
+    text-align: center;
+    
+}
+form.login div{
+    margin-bottom: 1%;
+}
+main.mainLogin{
+    margin-bottom: 20%;
+    margin-top: 4%;
+}
