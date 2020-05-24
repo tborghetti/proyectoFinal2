@@ -6,18 +6,7 @@ const bcrypt = require('../node_modules/bcryptjs');
 
 let usersController = {
     createUser: function(req,res) {
-        res.render("registro")
-        // encriptado de password usando bcrypt js (encryptPassword)
-        //let encryptPassword = bcrypt.hashSync(req.body.password,10);
-        //db.User.create({
-           // name: req.body.name,
-           // email: req.body.email,
-           // password: req.body.password,
-          // birthday: req.body.birthday
-       //})
-       //.then((users) => {
-           // res.redirect("/veoVeo/home")
-       //})   
+        res.render("registro")  
     },
     storeUser:function(req,res){
         let user = {

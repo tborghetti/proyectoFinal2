@@ -26,16 +26,18 @@
   
 </head>
 <body>
-    <!-- div para la alerta de error -->
+<!-- div para la alerta de error -->
       <div class="error">
     
       </div>
+      
       <%- include('../partials/header') %>
 
-<body>
+
     <!-- ACA VA FORMULARIO DE REGISTRO -->
-    <h1 id="register">¡Registrate!</h1>
-    <form  action="/users/registro" method="POST">
+   <main class="mainRegistro">
+     <h1 id="register">¡Registrate!</h1>
+     <form  action="/users/registro" method="POST" class="registro">
         <div >
             <label for="">Nombre</label><br>
             <input class="registro" type="text" name="name" value="" placeholder="Escriba aquí">
@@ -53,7 +55,8 @@
             <input class="registro" type="password" name="password" value="" placeholder="Escriba aquí">
         </div >
         <input class="enviar" type="submit" value="Enviar">
-    </form>
+     </form>
+    </main>
 
      <%- include('../partials/footer') %>
 </body>
