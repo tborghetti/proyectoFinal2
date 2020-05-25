@@ -87,12 +87,14 @@ cursor: pointer;
 
 div.mainResenia{
   font-family: 'Roboto', sans-serif;
+  text-align: center;
 }
 
 form input.resenia{
   justify-content: center;
   width: 50%;
 }
+
 form input.puntaje{
   justify-content: center;
   width: 6%;
