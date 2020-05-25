@@ -20,7 +20,7 @@ div.losRecomendados{
 width: 58%;
 margin-left: 259px;
 display: none;
-}
+} 
 
 a.head{
   cursor:pointer;
@@ -46,7 +46,6 @@ div.datos{
 }
 
 h1.nombre {
-      color: gray;
       font-family: 'Zilla Slab', serif;
       color: white;
     }
@@ -84,6 +83,22 @@ p.trailer {
   left: 33%;
 font-family: 'Roboto', sans-serif;
 cursor: pointer;
+}
+
+div.mainResenia{
+  font-family: 'Roboto', sans-serif;
+}
+
+form input.resenia{
+  justify-content: center;
+  width: 50%;
+}
+form input.puntaje{
+  justify-content: center;
+  width: 6%;
+}
+form textarea{
+  width: 50%;
 }
 
 /* Buscador*/
