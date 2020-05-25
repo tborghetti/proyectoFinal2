@@ -34,3 +34,6 @@ main.mainLogin{
     margin-bottom: 20%;
     margin-top: 4%;
 }
+form.uk-button-text{
+text-decoration-color: white;
+}
