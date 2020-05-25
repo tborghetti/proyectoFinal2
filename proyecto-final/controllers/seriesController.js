@@ -1,5 +1,11 @@
 let db = require('../database/models/index');
 let sequelize = db.sequelize;
+function validarContrasenia (contrasenia){
+    let errores = [ ];
+    if (seriesController.storeResenia.email == null){
+        errores.push("Tenes que poner un mail")
+    }
+}
 
 let seriesController = {
     home: function(req, res){
@@ -11,18 +17,34 @@ let seriesController = {
     infoxserie: function(req, res){
         res.render('infoxserie')
     },
-    // storeResenia: function(req,res){
-    //     let resenia = {
-    //         email:,
-    //         password:,
-    //         text:,
-    //         rating:
-    //     }
-    //     db.User.create(resenia)
-    //     .then(()=> {
-    //         res.send("Reseñia creado")
-    //     })
-    // },
+    storeResenia: function(req,res){
+        let resenia = {
+             email: req.body.email,
+             password:req.body.password,
+             text:req.body.comment,
+             rating: req.body.rating
+         }
+//         let errores = validarContrasenia(resenia)
+//         if(errores.length > 0){
+//            db.User.email.findAll()
+//            .then((email) =>{
+//                res.render ("crearResenia", {
+//                email: email,
+//                errores: errores
+//                })
+//            })
+//         } else {
+//             res.render('home')
+//         }
+     },
+//     create: function (req,res){
+//         db.User.email.findAll()
+ //        .then((email) =>{
+//             res.render ("crearResenia", {
+//             email: email,
+//             })
+//         })
+//     },
     favoritas: function(req, res){
         res.render('favoritas')
     },
