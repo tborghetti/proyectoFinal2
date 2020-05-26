@@ -18,12 +18,17 @@ let seriesController = {
         res.render('infoxserie')
     },
     storeResenia: function(req,res){
-        let resenia = {
-             email: req.body.email,
-             password:req.body.password,
+        let review = {
+            // email: req.body.email,
+            // password:req.body.password,
              text:req.body.comment,
              rating: req.body.rating
          }
+         db.Review.create(review)
+        .then(()=> {
+            
+            res.send("Review creado")
+        })
 //         let errores = validarContrasenia(resenia)
 //         if(errores.length > 0){
 //            db.User.email.findAll()
