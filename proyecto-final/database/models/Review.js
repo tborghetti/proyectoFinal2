@@ -27,10 +27,11 @@ module.exports = (sequelize, DataTypes) => {
     const Review = sequelize.define("Review", col, config)
     
     Review.associate = function(models){
-        Review.hasMany (models.User,{ 
+        Review.belongsTo(models.User,{ 
             as: "User_Reviews", 
             foreignKey: "user_id"
-           });}
+           });
+        }
     
            return Review
 }
