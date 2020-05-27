@@ -40,9 +40,7 @@ let seriesController = {
                  db.Review.create(review)
                 .then(()=> {
                     
-                    res.render('infoxserie',{
-                        review:review
-                    })
+                   res.redirect('/veoVeo/infoxserie?id=' + req.body.id_serie)
                 })
             } else{
                 res.redirect('/users/registro')
@@ -65,14 +63,14 @@ let seriesController = {
 //             res.render('home')
 //         }
      },
-//     create: function (req,res){
-//         db.User.email.findAll()
- //        .then((email) =>{
-//             res.render ("crearResenia", {
-//             email: email,
-//             })
-//         })
-//     },
+    create: function (req,res){
+        db.User.email.findAll()
+        .then((email) =>{
+            res.render ("crearResenia", {
+            email: email,
+            })
+        })
+    },
     favoritas: function(req, res){
         res.render('favoritas')
     },
