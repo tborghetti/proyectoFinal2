@@ -172,8 +172,23 @@
           <input class="enviar" type="submit" value="Enviar">
           </form>
         </div>
-
-
+        <!-- resenias creadas  -->
+        <% for (let i = 0; i < reviews.length; i++) { %>
+          <article class="uk-comment">
+            <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
+                <div class="uk-width-expand">
+                    <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#"><%=reviews[i].id_user%></a></h4>
+                    <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                        <li><a href="#"><%=reviews[i].created_at%></a></li>
+                        <li><a href="#">Edit</a></li>
+                    </ul>
+                </div>
+                <div class="uk-comment-body">
+                  <p><%=reviews[i].text%></p>
+              </div>
+            </header>
+        </article>
+        <% } %>
       </div>
   </main>
 

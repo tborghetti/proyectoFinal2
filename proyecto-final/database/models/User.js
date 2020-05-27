@@ -26,7 +26,7 @@ const User = sequelize.define("User", col, config)
 User.associate = function(models){
     User.hasMany (models.Review,{
     as: "User_Reviews",
-    foreignKey: "review_id"
+    foreignKey: "id_user"
     });
     }
 return User;

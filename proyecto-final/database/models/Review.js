@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
     Review.associate = function(models){
         Review.belongsTo(models.User,{ 
             as: "User_Reviews", 
-            foreignKey: "user_id"
+            foreignKey: "id_user"
            });
         }
     
