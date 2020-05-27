@@ -145,8 +145,9 @@
             <% } %> 
           </ul> 
         <% } %>  --> 
-        <form action="/veoVeo/infoxserie/<%=id_serie%>" method="POST" class="resenia">
-
+        <form action="/veoVeo/infoxserie" method="POST" class="resenia">
+          <input type="hidden" name="id_serie" value="<%=id_serie%>">
+          
           <div>
               <label for="">Email: </label><br>
               <input class="resenia" type="email" name="email" placeholder="Escriba aquí">
