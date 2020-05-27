@@ -15,19 +15,27 @@ let seriesController = {
         res.render('seriesxgenero')
     },
     infoxserie: function(req, res){
-        res.render('infoxserie')
+        let id_serie = req.query.id
+        console.log(id_serie)
+        res.render('infoxserie',{
+            id_serie:id_serie
+        })  
     },
     storeResenia: function(req,res){
         let review = {
-            // email: req.body.email,
+            email: req.body.email,
             // password:req.body.password,
              text:req.body.comment,
-             rating: req.body.rating
+             rating: req.body.rating,
+             id_serie: req.body.id_serie
          }
+         console.log(req.body)
          db.Review.create(review)
         .then(()=> {
             
-            res.send("Review creado")
+            res.render('infoxserie',{
+                review:review
+            })
         })
 //         let errores = validarContrasenia(resenia)
 //         if(errores.length > 0){
