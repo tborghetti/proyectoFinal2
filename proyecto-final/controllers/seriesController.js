@@ -22,21 +22,36 @@ let seriesController = {
         })  
     },
     storeResenia: function(req,res){
-        let review = {
-            email: req.body.email,
-            // password:req.body.password,
-             text:req.body.comment,
-             rating: req.body.rating,
-             id_serie: req.body.id_serie
-         }
-         console.log(req.body)
-         db.Review.create(review)
-        .then(()=> {
-            
-            res.render('infoxserie',{
-                review:review
+        db.User.findAll({
+           where: {
+               email: req.body.email
+           }
+            }).then(resultados => {
+              if (resultados.length > 0){
+                let review = {
+                    email: req.body.email,
+                    // password:req.body.password,
+                     text:req.body.comment,
+                     rating: req.body.rating,
+                     id_serie: req.body.id_serie,
+                     id_user: resultados[0].id
+                 }
+                 //console.log(req.body)
+                 db.Review.create(review)
+                .then(()=> {
+                    
+                    res.render('infoxserie',{
+                        review:review
+                    })
+                })
+            } else{
+                res.redirect('/users/registro')
+            }
             })
-        })
+        
+               
+            
+        
 //         let errores = validarContrasenia(resenia)
 //         if(errores.length > 0){
 //            db.User.email.findAll()
