@@ -4,11 +4,6 @@ body{
   background-color: rgb(50, 54, 57);
 }
 
-div.trailers{
-  margin-left: 8%;
-margin-bottom: 3%;
-margin-top: 3%;
-}
 
 main.padre{
   display: flex;
@@ -16,11 +11,6 @@ main.padre{
   margin-right: 5%;
 }
 
-div.losRecomendados{
-width: 58%;
-margin-left: 259px;
-display: none;
-} 
 
 a.head{
   cursor:pointer;
@@ -36,19 +26,13 @@ margin-left: 259px;
   display: block;
 
 }
-/* div.recomendados{
 
-} */
 div.datos{
   margin-top: 5%;
   font-family: 'Roboto', sans-serif;
   width: 50%;
 }
 
-h1.nombre {
-      font-family: 'Zilla Slab', serif;
-      color: white;
-    }
 
 div.poster{
   width: 44%;
@@ -57,6 +41,12 @@ div.poster{
   flex-wrap: wrap;
   justify-content: center;
 }
+
+div.losRecomendados{
+  width: 58%;
+  margin-left: 259px;
+  display: none;
+  } 
 
 button.lasRecomendaciones {
   top: 240px;
@@ -85,14 +75,38 @@ font-family: 'Roboto', sans-serif;
 cursor: pointer;
 }
 
+div.trailerYresenia{
+  display: flex;
+}
+
+div.trailers{
+  width: 50%;
+  margin-bottom: 3%;
+  margin-top: 3%;
+  margin-left: 10%;
+  }
+
 div.mainResenia{
   font-family: 'Roboto', sans-serif;
   text-align: center;
+  width: 30%;
+  margin-bottom: 5%;
+  margin-top: 2%;
+  padding: 10px;
+  
+  border-color: rgba(74, 78, 82);
+  border-style: solid;
+}
+
+h1.nombre {
+  font-family: 'Zilla Slab', serif;
+  color: white;
+  font-size: 30px;
 }
 
 form input.resenia{
   justify-content: center;
-  width: 50%;
+  width: 70%;
 }
 
 form input.puntaje{
@@ -100,7 +114,7 @@ form input.puntaje{
   width: 6%;
 }
 form textarea{
-  width: 50%;
+  width: 70%;
 }
 input.enviar{
   width: 15%;
@@ -115,8 +129,16 @@ header#comentario{
   background-color: rgba(74, 78, 82);
   display: flex;
   align-items: center;
-  height: 140px;
+  height: 150px;
 }
+article#otrosComentarios{
+  width: 60%;
+  justify-content: center;
+}
+
+
+
+
 
 /* Buscador*/
 button#buscador {
