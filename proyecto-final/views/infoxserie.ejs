@@ -178,7 +178,7 @@
           
           
           <article class="uk-comment">
-            <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
+            <header class="uk-comment-header uk-grid-medium uk-flex-middle"  uk-grid id= "comentario">
                 <div>
                   <!--href tieene q ir al detalle usuario--> 
                   <h4 class="uk-comment-title uk-margin-remove" ><a class="uk-link-reset" href="#"><%=reviews[i].id_user%></a></h4>
@@ -186,8 +186,9 @@
                         <li><a href="#"><%=reviews[i].created_at%></a></li>
                         <li><a href="#">Edit</a></li>
                         <li><a href="#">Borrar</a></li>
+                        <li><a> Puntaje: <%=reviews[i].rating%></a></li>
                     </ul>
-                    <p>Puntaje: <%=reviews[i].rating%> | <%=reviews[i].text%></p>
+                    <p class="comment"><%=reviews[i].text%></p>
                   </div>
                 
             </header>

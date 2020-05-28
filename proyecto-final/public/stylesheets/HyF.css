@@ -4,7 +4,7 @@ body{
   background-color: rgb(50, 54, 57);
 }
 
-header{
+header.mainHeader{
   background-color: rgba(74, 78, 82);
   display: flex;
   align-items: center;
@@ -98,7 +98,7 @@ footer span{
   }
 }
 @media (max-width: 600px){
-  header{
+  header.mainHeader{
   flex-wrap: wrap;
   display: flex;
   }

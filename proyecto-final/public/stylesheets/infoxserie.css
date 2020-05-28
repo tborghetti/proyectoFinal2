@@ -111,6 +111,13 @@ input.enviar{
   font-weight: bold;
 }
 
+header#comentario{
+  background-color: rgba(74, 78, 82);
+  display: flex;
+  align-items: center;
+  height: 140px;
+}
+
 /* Buscador*/
 button#buscador {
 	color: black;
