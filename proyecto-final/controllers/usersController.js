@@ -1,6 +1,6 @@
 let db = require('../database/models/index');
 let operadores = db.Sequelize.Op;
-const bcrypt = require('../node_modules/bcryptjs');
+const bcrypt = require('bcryptjs');
 // npm bcrypt requiero arriba
 //correr en terminal npm install bcryptjs
 const moduloLogin = require('../modulo-login')
@@ -18,7 +18,7 @@ let usersController = {
         }
         db.User.create(user)
         .then(()=> {
-            res.send("Usuario creado")
+            res.redirect('./login')
         })
     },
     login: function(req,res){

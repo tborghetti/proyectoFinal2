@@ -1,11 +1,7 @@
 let db = require('../database/models/index');
 let sequelize = db.sequelize;
-function validarContrasenia(contrasenia) {
-    let errores = [];
-    if (seriesController.storeResenia.email == null) {
-        errores.push("Tenes que poner un mail")
-    }
-}
+const moduloLogin = require('../modulo-login');
+
 
 let seriesController = {
     home: function (req, res) {
@@ -19,8 +15,9 @@ let seriesController = {
         console.log(id_serie)
         db.Review.findAll({
             where:[{
-                id_serie: req.query.id
-            }]
+                id_serie: req.query.id,
+            }],
+            include: [{association:"User_Reviews"}]
         })
         .then((reviews) => {
             console.log(reviews)
@@ -29,44 +26,45 @@ let seriesController = {
                 reviews: reviews
             })
         })
+
     },
     storeResenia: function (req, res) {
+        moduloLogin.validar(req.body.email, req.body.password)
+        .then((usuario)=> {
+        let errores = []
+
+            if (usuario == null) 
+            {
+                errores.push("Usuario invalido")
+            }
+
+        if (errores.length == 0) {
+
         db.User.findAll({
             where: {
-                email: req.body.email
+                email: req.body.email //esto hay que sacarlo?
             }
         }).then(resultados => {
             if (resultados.length > 0) {
                 let review = {
                     email: req.body.email,
-                    // password:req.body.password,
+                    password:req.body.password,
                     text: req.body.comment,
                     rating: req.body.rating,
                     id_serie: req.body.id_serie,
-                    id_user: resultados[0].id
+                    id_user: resultados[0].id,
                 }
-                //console.log(req.body)
                 db.Review.create(review)
                     .then(() => {
 
                         res.redirect('/veoVeo/infoxserie?id=' + req.body.id_serie)
                     })
-            } else {
-                res.redirect('/users/registro')
-            }
+            } 
         })
-        //         let errores = validarContrasenia(resenia)
-        //         if(errores.length > 0){
-        //            db.User.email.findAll()
-        //            .then((email) =>{
-        //                res.render ("crearResenia", {
-        //                email: email,
-        //                errores: errores
-        //                })
-        //            })
-        //         } else {
-        //             res.render('home')
-        //         }
+            } else {
+                res.redirect('/users/registro') }
+    })
+
     },
     create: function (req, res) {
         db.User.findAll()

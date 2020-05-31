@@ -24,14 +24,13 @@ let moduloLogin = {
         })
     },
 
-    validar: function (email, password) {
-        return db.User.findOne({
+    validar: function (email, password) { 
+        return db.User.findOne({                     
             where:{
-                email:email,
-
+                email:email, 
             },
         })
-        .then(results=>{
+        .then(results=>{ 
             if (results && bcrypt.compareSync(password,results.password)){
                 return results
             } else {
