@@ -2,15 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/deleteReview.css">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/HyF.css">
+    <script src="https://kit.fontawesome.com/6a7542e233.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
+    <script src="/javascripts/seriesxgenero.js" charset="utf-8"></script>
+    <script src="/javascripts/home.js" charset="utf-8"></script>
+    <script src="/javascripts/busquedaAvanzada.js" charset="utf-8"></script>
+    <script src="/javascripts/prevenirbusquedavacia.js" charset="utf-8"></script>
+  
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/slick.css"/>
+    <script type="text/javascript" src="/javascripts/slick.min.js"></script>
+
+    <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
+
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre:400,500|Aleo:400,700|Arbutus+Slab|Bowlby+One+SC|EB+Garamond:400,500|Gilda+Display|Merriweather:300|Noto+Serif+SC:400,500|Roboto:100|Source+Serif+Pro|Special+Elite|Staatliches|Zilla+Slab:500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded:800|Bowlby+One+SC&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <h1>Aqui vamos a borrar las reviews</h1>
+    <%- include('../partials/header') %>
+    <main>
+    
+        <h1 class="titulo">Aqui vamos a borrar las reviews</h1>
     
     <form action="/users/misResenias/delete/<%= deleteId %> " method="POST" class="resenia">
-        <h1>Delete</h1>
-        <p>Confirm user to delete review</p>
+        <h1 class="borrar">Delete</h1>
+        <p>Confirm user to delete review</p> 
         <div class="uk-margin">
             <div class="uk-inline">
                 <span class="uk-form-icon" uk-icon="icon: user"></span>
@@ -24,7 +54,11 @@
                 <input class="uk-input" type="password" name="password" placeholder="contraseña">
             </div>
         </div>    
-        <button type="submit" name="button">Confirmar</button>
+        <button type="submit" name="button" class="confirmar">Confirmar</button>
       </form>
+    
+    </main>
+
+    <%- include('../partials/footer') %>
 </body>
 </html>
