@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/stylesheets/registro.css">
     <link rel="stylesheet" href="/stylesheets/home.css">
     <link rel="stylesheet" href="/stylesheets/HyF.css">
+    <link rel="stylesheet" href="/stylesheets/myReview.css">
     <script src="https://kit.fontawesome.com/6a7542e233.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
     <script src="/javascripts/seriesxgenero.js" charset="utf-8"></script>
@@ -44,30 +45,35 @@
           <a href="../veoVeo/home" uk-toggle><i class="fas fa-users"></i></a>
         </form>
       </header>
-    
-      <h1 style=color:white>Mis reseñas</h1>
+
+    <main>
+      <h1> Mis reseñas</h1>
 
     <% for (let i = 0; i < reseniasXusuario.length; i++) { %>
 
-        <article class="uk-comment" id="otrosComentarios">
-          <header class="uk-comment-header uk-grid-medium uk-flex-middle"  uk-grid id= "comentario">
-              <div>
+        <article class="uk-comment" >
+          <header class="uk-comment-header uk-grid-medium uk-flex-middle"  uk-grid id= "miResenia">
                 <!--href tieene q ir al detalle usuario--> 
-                <h4 class="uk-comment-title uk-margin-remove" ><a class="uk-link-reset" href="#"><%=reseniasXusuario[i].id_user%></a></h4>
+                <div class="uk-comment-body" id="otrosComentarios"> 
+                  <p class="puntaje"> Puntaje: <%=reseniasXusuario[i].rating%> </p>
+                  <p class="comentario"><%=reseniasXusuario[i].text%></p>
+                  
                   <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top" >
                       <li><a href="#"><%=reseniasXusuario[i].created_at%></a></li>
                       <li><a href="misResenias/edit/<%=reseniasXusuario[i].id%>">Editar</a></li>
                       <li><a href="#">Borrar</a></li>
                   </ul>
-                  <p class="puntaje"> Puntaje: <%=reseniasXusuario[i].rating%> </p>
-                  <p><%=reseniasXusuario[i].text%></p>
-
-                </div>
+                </div> 
           </header>
       </article>
+      
    
     <% } %>
+  </main>
+
+
 
     <%- include('../partials/footer') %>
+  
 </body>
 </html>
