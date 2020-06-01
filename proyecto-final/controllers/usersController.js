@@ -56,17 +56,60 @@ let usersController = {
             where: [{id: req.params.id}]
         })
         .then(resultado => {
-            res.render('editReview', {resultado:resultado})
+            res.render('editReview', {resultado:resultado, error: req.query.Error})
         })
     },
     confirmEdit: function(req,res){
+        moduloLogin.validar(req.body.email, req.body.password)
+        .then(usuario => {
+            if (usuario != null) {
+        let updateR = {
+            text: req.body.comment,
+            rating: req.body.rating,
+            idR: req.params.id
+        }
 
+        db.Review.update({
+            text: updateR.text,
+            rating: updateR.rating
+        },{
+            where: {
+                id: updateR.idR
+            }
+        })
+        .then(() => {
+            db.Review.findByPk(req.params.id)
+            .then(resultado => {
+                res.redirect('/users/login')
+            })
+        })
+        } else {
+            res.redirect('/users/misResenias/edit/' + req.params.id + '?Error=true')
+        }
+    })
     },
     deleteReview: function(req,res){
-
+        db.Review.findOne({
+            where: [{id: req.params.id}]
+        })
+        .then(resultado => {
+            res.render('deleteReview', {resultado:resultado, deleteId:req.params.id})
+        })
     },
     confirmDelete: function(req,res){
-
+        moduloLogin.validar(req.body.email, req.body.password)
+        .then(usuario => {
+            if (usuario != null) {
+                db.Review.destroy({
+                    where: [{
+                        id: req.params.id,
+                    }]
+                })
+                res.redirect('/users/login');
+            } else {
+                res.redirect('/users/misResenias/delete/' + req.params.id)
+            }
+        })
     },
     buscar: function(req,res){
         res.render('buscadorDeUsuarios')

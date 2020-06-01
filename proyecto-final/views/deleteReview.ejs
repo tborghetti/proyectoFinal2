@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Aqui vamos a borrar las reviews</h1>
+    
+    <form action="/users/misResenias/delete/<%= deleteId %> " method="POST" class="resenia">
+        <h1>Delete</h1>
+        <p>Confirm user to delete review</p>
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                <input class="uk-input" name="email" type="text"  placeholder="usuario">
+            </div>
+        </div>
+    <!-- contraseña -->
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                <input class="uk-input" type="password" name="password" placeholder="contraseña">
+            </div>
+        </div>    
+        <button type="submit" name="button">Confirmar</button>
+      </form>
+</body>
+</html>

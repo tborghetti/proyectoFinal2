@@ -6,6 +6,36 @@
     <title>Document</title>
 </head>
 <body>
-   <h1>HOL AMUNDO</h1> 
+   <h1>Holis vamos a editar esta serie</h1> 
+
+   <form action="/users/misResenias/edit/<%= resultado.id %> " method="POST" class="resenia">
+   <% if (error) {  %> 
+        <p>Usuario o contraceña son incorrectos</p>
+   <% }  %> 
+
+    <div>
+      <label for="">Email: </label><br>
+      <input class="resenia" type="email" name="email" placeholder="Escriba aquí">
+
+    </div>
+
+    <div>
+      <label for="">Contraseña:</label><br>
+      <input class="resenia" type="password" name="password" placeholder="Escriba aquí" required>
+
+    </div>
+
+    <div>
+      <label for="">Comentario:</label><br>
+      <textarea name="comment" id="" cols="70" rows="7" required> <%= resultado.text %> </textarea>
+    </div>
+
+    <div>
+      <label for="">Puntaje (del 1 al 10, siendo 10 lo más alto)</label> <br>
+      <input class="puntaje" type="text" name="rating" placeholder="nº" value="<%= resultado.rating %>"> <br>
+    </div>
+    <input class="enviar" type="submit" value="Enviar">
+  </form>
+
 </body>
 </html>

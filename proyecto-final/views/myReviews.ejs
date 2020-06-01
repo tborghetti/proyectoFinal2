@@ -51,9 +51,15 @@
     <main>
       <h1> Mis reseñas</h1>
 
-    <% for (let i = 0; i < reseniasXusuario.length; i++) { %>
+      <% if (reseniasXusuario.length == 0 )  { %>
+        
+        <p> ¡Todavia no hiciste ninguna reseña!</p>
+      
+      <% } else { %> 
 
-        <article class="uk-comment" >
+        <% for (let i = 0; i < reseniasXusuario.length; i++) { %>
+
+          <article class="uk-comment" >
           <header class="uk-comment-header uk-grid-medium uk-flex-middle"  uk-grid id= "miResenia">
                 <!--href tieene q ir al detalle usuario--> 
                 <div class="uk-comment-body" id="otrosComentarios"> 
@@ -63,14 +69,14 @@
                   <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top" >
                       <li><a href="#"><%=reseniasXusuario[i].created_at%></a></li>
                       <li><a href="misResenias/edit/<%=reseniasXusuario[i].id%>">Editar</a></li>
-                      <li><a href="#">Borrar</a></li>
+                      <li><a href="misResenias/delete/<%=reseniasXusuario[i].id%>">Borrar</a></li>
                   </ul>
                 </div> 
           </header>
       </article>
-      
-   
+          <% } %>
     <% } %>
+
   </main>
 
 
