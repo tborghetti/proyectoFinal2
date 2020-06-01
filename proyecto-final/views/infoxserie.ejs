@@ -165,7 +165,7 @@
 
             <div>
               <label for="">Puntaje (del 1 al 10, siendo 10 lo más alto)</label> <br>
-              <input class="puntaje" type="text" name="rating" placeholder="nº"> <br>
+              <input class="puntaje" type="number" min="0" max="10" name="rating" placeholder="nº"> <br>
             </div>
             <input class="enviar" type="submit" value="Enviar">
           </form>
@@ -192,7 +192,7 @@
           <div>
             <!--href tieene q ir al detalle usuario-->
             <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset"
-                href="#"><%=reviews[i].Review_User.name%></a>
+                href="/../users/detalle/<%=reviews[i].id_user%>"><%=reviews[i].Review_User.name%></a>
             </h4>
             <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
               <li>Creado: <%=reviews[i].created_at%></li>
