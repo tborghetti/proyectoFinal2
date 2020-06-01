@@ -17,7 +17,7 @@ let seriesController = {
             where:[{
                 id_serie: req.query.id,
             }],
-            include: [{association:"User_Reviews"}]
+            include: [{association:"Review_User"}]
         })
         .then((reviews) => {
             console.log(reviews)
@@ -62,7 +62,8 @@ let seriesController = {
             } 
         })
             } else {
-                res.redirect('/users/registro') }
+                res.redirect('/users/registro')
+             }
     })
 
     },

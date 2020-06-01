@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     }
 const User = sequelize.define("User", col, config)
 User.associate = function(models){
-    User.hasMany (models.Review,{
+    User.hasMany(models.Review, {
     as: "User_Reviews",
     foreignKey: "id_user"
     });
