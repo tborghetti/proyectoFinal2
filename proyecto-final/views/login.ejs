@@ -39,18 +39,20 @@
       </div>
       
       <header class="mainHeader">
-        <a class="head" href= "../veoVeo/home"><label for="">Inicio</label></a>
-      <h1>Veo<a href="../veoVeo/home"><img src="/images/logo.png" alt=""></a>Veo</h1>
-        <form class="form-buscador" action="./resultado" method="get" id="busqueda">
-          <input class="buscadorsecundario inputHidden" type="text" name="buscadorsecundario" placeholder="Buscador" value="">
-          <button type="submit">Enviar</button>
-          <i class="fas fa-search" id="lupita"></i>
-          <a href="../veoVeo/favoritas" ><i class="fas fa-heart"></i></a>
-          <a href="#offcanvas-derecho" uk-toggle><i class="fas fa-filter"></i></a>
-         <!--falta cambiar el href -->
-          <a href="../veoVeo/home" uk-toggle><i class="fas fa-users"></i></a>
-        </form>
-      </header>
+        <div class="dosPalabras">  
+        <a class="head" href= "./home"><label for="">Inicio</label></a>
+          <a class="resenias" href= "./users/misResenias">MyReviews</a>
+          </div>
+        <h1>Veo<a href="./home"><img src="/images/logo.png" alt=""></a>Veo</h1>
+          <form class="form-buscador" action="./resultado" method="get" id="busqueda">
+            <input class="buscadorsecundario inputHidden" type="text" name="buscadorsecundario" placeholder="Buscador" value="">
+            <button type="submit">Enviar</button>
+            <i class="fas fa-search" id="lupita"></i>
+            <a href="./favoritas" ><i class="fas fa-heart"></i></a>
+            <a href="#offcanvas-derecho" uk-toggle><i class="fas fa-filter"></i></a>
+            <a href="../users/login" uk-toggle><i class="fas fa-user"></i></a>
+          </form>    
+        </header>
 
 
     <!-- ACA VA FORMULARIO DE LOGIN -->

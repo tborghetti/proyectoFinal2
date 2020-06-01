@@ -17,7 +17,7 @@ header h1{
   font-size: 50px;
   font-family: 'Bowlby One SC', cursive;
   margin: 0;
-  order: 2;
+  order: 3;
   width: 33.3%;
   text-align: center;
   margin-left: 3%;
@@ -31,7 +31,7 @@ header img{
 header form.form-buscador{
   display: flex;
   align-items: center;
-  order: 3;
+  order: 4;
   margin-right: 10px;
   width: 33.3%;
 }
@@ -41,20 +41,27 @@ header form.form-buscador i.fas{
     margin-left: 3px;
     margin-right: 10px;
 }
-
+div.dosPalabras{
+  width: 33.3%;
+}
 a.head{ /*palabra inicio*/
   color: yellow;
   font-size: 20px;
-  margin-left: 15px;
+  margin-left: 20px;
   order: 1;
   font-family: 'Roboto', sans-serif;
-  width: 33.3%;
 }
 
 a.head:hover{
   color: yellow;
 }
-
+a.resenias{
+  color: yellow;
+  font-size: 20px;
+  margin-left: 20px;
+  order: 2;
+  font-family: 'Roboto', sans-serif;
+}
 a.hearts{
   color: yellow;
   margin-left: 3px;
