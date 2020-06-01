@@ -30,11 +30,11 @@ let usersController = {
             let errores = []
 
             // Vas a tener que hacer un if por cada cosa que quieras validar
-            if (usuario == null) 
-            {
-                res.redirect('login',{
-                errores:errores
-            })  // Deberias enviar a la vista con el formulario de login y compartir los errores e impirmirlos
+            if (usuario == null) {
+                errores.push('Usuario invalido!')
+                res.render('login',{
+                    errores:errores
+                })  // Deberias enviar a la vista con el formulario de login y compartir los errores e impirmirlos
             }
             //if ( el puntaje no es un numero)
 

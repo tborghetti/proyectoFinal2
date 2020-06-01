@@ -62,7 +62,7 @@
         <h1 id="resultados"> Resultados de "<%= busqueda %>" </h1>
         <% for (let i = 0; i < users.length; i++) { %>
             <dl class="uk-description-list" id="detalles">
-               <a href="#" class="nombre"> <dt>User: <%= users[i].name %> </dt> </a>
+               <a href="/users/detalle/<%=users[i].id%>" class="nombre"> <dt>User: <%= users[i].name %> </dt> </a>
                 <dd>Email: <%= users[i].email %> </dd>
             </dl>
             <hr>

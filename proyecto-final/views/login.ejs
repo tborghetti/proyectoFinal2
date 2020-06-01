@@ -58,6 +58,15 @@
     <!-- ACA VA FORMULARIO DE LOGIN -->
    <main class="mainLogin">
      <h1 id="register">LOGIN</h1>
+     <% if (typeof errores != "undefined") { %>
+      <ul style="color:red">
+          <% for (let i = 0; i < errores.length; i++) { %>
+              <li>
+                  <%=errores[i]%>
+              </li>
+          <% } %>
+      </ul>
+  <% } %>
      <form class="login" action="/users/misResenias" method="POST">
          <!-- nombre de usuario -->
         <div class="uk-margin">
