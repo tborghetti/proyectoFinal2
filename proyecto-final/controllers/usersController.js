@@ -32,7 +32,9 @@ let usersController = {
             // Vas a tener que hacer un if por cada cosa que quieras validar
             if (usuario == null) 
             {
-                res.redirect('login')  // Deberias enviar a la vista con el formulario de login y compartir los errores e impirmirlos
+                res.redirect('login',{
+                errores:errores
+            })  // Deberias enviar a la vista con el formulario de login y compartir los errores e impirmirlos
             }
             //if ( el puntaje no es un numero)
 
@@ -115,7 +117,18 @@ let usersController = {
         res.render('buscadorDeUsuarios')
     },
     detalle:function(req,res){
-
+        db.User.findOne({
+            where: [{id: req.params.id}],
+            include: [{
+                association: 'User_Reviews'
+            }]
+        }).then(detail => {
+            res.render('detalleUsuario', {
+                detail:detail,
+            })
+        
+           //agregar aca las resenias
+        })
     },
 }
 
