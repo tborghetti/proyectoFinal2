@@ -1,11 +1,34 @@
 *{box-sizing: border-box;}
 
+main{
+    height: 900px;
+}
 div.todo{
 margin-left: 45px;
 }
-li{
+
+li {
     font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+}
+
+article#comentarios{
+    width: 50%;
+    font-size: 15px;
+}
+
+h1.detalle{
+    color: white;
+    margin-top: 2%;
+    margin-left: 0;
+    margin-bottom: 2%;
+    font-size: 40px;
+    font-family: 'Zilla Slab', serif;
 }
 h2#h2{
-    margin-left: -27px;
+    font-family: 'Zilla Slab', serif;
+    font-size: 30px;
+}
+article p{
+    font-family: 'Roboto', sans-serif;
 }

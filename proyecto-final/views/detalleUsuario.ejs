@@ -29,7 +29,7 @@
 </head>
 <body>
     <!-- div para la alerta de error -->
-    <div class="error">
+    <div class="error"> 
     
     </div>
     
@@ -48,33 +48,38 @@
           <a href="../users/buscar" uk-toggle><i class="fas fa-users"></i></a>
         </form>    
       </header>
-      
-    <div class="todo">
-        <h1 style="color: white;">Detalle</h1>
-        <div>
+
+    <main>
+      <div class="todo">
+        <h1 class="detalle">Detalle</h1>
+        
         <ul class="uk-list">
-            <li>Nombre: <%= detail.name %></li>
+            <li> Nombre: <%= detail.name %></li>
             <li>Fecha de nacimiento: <%= detail.birthday %></li>
             <li>Email: <%= detail.email %></li>
         </ul>
-        <h2 id="h2" style="color: white;">Reseñas de <%= detail.name %></h2>
+        <div>
+        <h2 id="h2" style="color: white;">Reseñas de <%= detail.name %>:  </h2>
         <% for(let i = 0; i < detail.User_Reviews.length; i++) { %>
            
-          <article class="uk-comment" id="otrosComentarios">
+          <article class="uk-comment" id="comentarios">
             <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid id="miResenia">
               <div>
                 <!--href tieene q ir al detalle usuario-->
                 <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset"
                     href="#"><%=detail.User_Reviews[i].name%></a>
                 </h4>
-                <p class="puntaje"> Puntaje: <%=detail.User_Reviews[i].rating%> </p>
+                <p> Puntaje: <%=detail.User_Reviews[i].rating%> </p>
                 <p><%=detail.User_Reviews[i].text%></p>
     
               </div>
             </header>
           </article>
         <% } %>
-    </div>
- </div>
+        </div>
+       </div>
+    </main> 
+
     <%- include('../partials/footer') %>
 </body>
+</html>
