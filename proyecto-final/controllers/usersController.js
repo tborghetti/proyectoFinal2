@@ -62,6 +62,18 @@ let usersController = {
     confirmEdit: function(req,res){
 
     },
+    deleteReview: function(req,res){
+
+    },
+    confirmDelete: function(req,res){
+
+    },
+    buscar: function(req,res){
+        res.render('buscadorDeUsuarios')
+    },
+    detalle:function(req,res){
+
+    },
 }
 
 module.exports = usersController;
