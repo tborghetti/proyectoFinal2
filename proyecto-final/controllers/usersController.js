@@ -32,11 +32,11 @@ let usersController = {
             // Vas a tener que hacer un if por cada cosa que quieras validar
             if (usuario == null) 
             {
-                errores.push("Usuario invalido")
+                res.redirect('login')  // Deberias enviar a la vista con el formulario de login y compartir los errores e impirmirlos
             }
             //if ( el puntaje no es un numero)
 
-            if (errores.length == 0) {
+            else{
                 let id_user = usuario.id
                 db.Review.findAll({
                     where: {
@@ -47,16 +47,21 @@ let usersController = {
                         reseniasXusuario: reseniasXusuario
                     })
                 })
-            } else {
-                res.send(errores)
-                // Deberias enviar a la vista con el formulario de login y compartir los errores e impirmirlos
-            }
-            
+            }    
             
         }) 
-     
+    },
+    showEdit: function(req,res){
+        db.Review.findOne({
+            where: [{id: req.params.id}]
+        })
+        .then(resultado => {
+            res.render('editReview', {resultado:resultado})
+        })
+    },
+    confirmEdit: function(req,res){
 
-    }
+    },
 }
 
 module.exports = usersController;

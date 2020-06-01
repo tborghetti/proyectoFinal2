@@ -31,11 +31,16 @@ let moduloLogin = {
             },
         })
         .then(results=>{ 
-            if (results && bcrypt.compareSync(password,results.password)){
-                return results
-            } else {
-                return null
-            }
+           if (results != null) {
+               let chequeo = bcrypt.compareSync(password,results.password)
+               if (chequeo) {
+                   return results;
+               } else {
+                   return undefined
+               }
+           } else {
+               return undefined
+           }
         })
     }
 }
