@@ -12,5 +12,6 @@ router.get('/misResenias/delete/:id', usersController.deleteReview);
 router.post('/misResenias/delete/:id', usersController.confirmDelete);
 router.get('/buscar', usersController.buscar);
 router.get('/detalle/:id', usersController.detalle);
+router.get('/searchUserResults', usersController.searchUserResults);
 
 module.exports = router;

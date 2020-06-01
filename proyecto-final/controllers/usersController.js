@@ -130,6 +130,21 @@ let usersController = {
            //agregar aca las resenias
         })
     },
+    searchUserResults: function(req,res){
+        db.User.findAll({
+            where:{
+                [operadores.or]: {
+                    email: {[operadores.like]: "%" + req.query.searchUser + "%"},
+                    name: {[operadores.like]: "%" + req.query.searchUser + "%"}
+                }
+            }
+        }).then(function(resultado){
+            res.render('searchUserResults',{
+                users: resultado,
+                busqueda: req.query.searchUser
+            })
+        })
+    },
 }
 
 module.exports = usersController;

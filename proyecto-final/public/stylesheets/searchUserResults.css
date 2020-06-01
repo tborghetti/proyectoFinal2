@@ -1,0 +1,35 @@
+*{box-sizing: border-box;}
+
+main{
+    height: 520px;
+}
+
+h1#resultados{
+    color: white;
+    text-align: center;
+    margin-bottom: 2%;
+    font-size: 50px;
+    font-family: 'Zilla Slab', serif;
+    margin-top:2%;
+}
+dl#detalles {
+    color: white;
+    margin-left: 3%;
+}
+dl dt{
+    color:grey;
+    font-family: 'Zilla Slab', serif;
+    font-size: 20px;
+}
+dl dd{
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+a.nombre:hover{
+    color: yellow;
+}
+hr{
+    color: grey;
+}
+

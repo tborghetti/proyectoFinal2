@@ -1,12 +1,14 @@
 *{box-sizing: border-box;}
 
 h1#register{
+    margin-top: 3%;
     color: white;
     text-align: center;
     margin-bottom: 2%;
     font-size: 50px;
     font-family: 'Zilla Slab', serif;
 }
+
 body{
     color: white;
 }
@@ -17,7 +19,7 @@ input.registro{
     border-radius: 8px;
     margin: 0.5%;
 }
-input.enviar{
+input.buscar{
     width: 15%;
     height: 30px;
     border-radius: 8px;
@@ -27,18 +29,38 @@ input.enviar{
 }
 form.login{
     text-align: center;
-    
 }
-form.login div{
+
+form.login input.email{
     margin-bottom: 1%;
+    width: 30%;
+    justify-content: center;
 }
-main.mainLogin{
+form.login input.usuario{
+    margin-bottom: 1%;
+    width: 30%;
+    justify-content: center;
+}
+
+form label#email{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: white;
+}
+form label#user{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+main {
     margin-bottom: 20%;
-    margin-top: 4%;
+    margin-top: 10%;
 }
+div.nada{
+    margin-top: 3%;
+}
+
 form.uk-button-text{
 text-decoration-color: white;
-}
-a.crear:hover{
-    color: yellow;
 }
