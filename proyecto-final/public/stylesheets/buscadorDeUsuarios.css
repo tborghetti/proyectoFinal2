@@ -9,9 +9,6 @@ h1#register{
     font-family: 'Zilla Slab', serif;
 }
 
-body{
-    color: white;
-}
 
 input.registro{
     width: 35%;
@@ -54,7 +51,7 @@ form label#user{
 }
 
 main {
-    margin-bottom: 20%;
+    height: 420px;
     margin-top: 10%;
 }
 
