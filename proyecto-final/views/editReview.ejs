@@ -35,11 +35,11 @@
 <body>
   <%- include('../partials/header') %>
   <main>
-   <h1 class="titulo">Holis vamos a editar esta serie</h1> 
+   <h1 class="titulo">¡Editá tu reseña!</h1> 
 
    <form action="/users/misResenias/edit/<%= resultado.id %> " method="POST" class="resenia">
    <% if (error) {  %> 
-        <p>Usuario o contraseña son incorrectos</p>
+        <p style="color: yellow;">Usuario o contraseña incorrecta</p>
    <% }  %> 
 
     <div>

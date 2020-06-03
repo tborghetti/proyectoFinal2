@@ -8,17 +8,19 @@ h1.titulo{
     color: white;
     margin-top: 2%;
     margin-bottom: 2%;
-    font-size: 20px;
+    font-size: 30px;
     font-family: 'Zilla Slab', serif;
 }
 form label{
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
+    color: white;
 }
 form input.resenia{
     justify-content: center;
     width: 30%;
     margin-bottom: 1%;
+    height: 27px;
   }
 
 textarea{

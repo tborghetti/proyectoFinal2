@@ -74,10 +74,11 @@ let seriesController = {
 
                                     res.redirect('/veoVeo/infoxserie?id=' + req.body.id_serie)
                                 })
-                        } else {
-                            res.redirect('/users/registro')
-                        }
+                        } 
                     })
+                    
+                } else {
+                    res.redirect('/users/registro')
                 }
             })
 
