@@ -134,16 +134,12 @@
 
         <div class="mainResenia">
           <h1 class="nombre">¡Dejanos tu opinión!</h1>
-          <!-- <% if (typeof errores != "undefined") { %>
-            <ul style="color:red">
+          <% if (typeof errores != "undefined") { %>
                 <% for (let i = 0; i < errores.length; i++) { %>
-                    <li>
-                        <%=errores[i]%>
-                    </li>
+                        <p style="color: yellow;">Usuario invalido!</p>
                 <% } %>
-            </ul>
-        <% } %> -->
-          <form action="/veoVeo/infoxserie" method="POST" class="resenia">
+        <% } %>
+          <form action="/veoVeo/infoxserie?id=<%=id_serie%>" method="POST" class="resenia">
             <input type="hidden" name="id_serie" value="<%=id_serie%>">
 
             <div>
