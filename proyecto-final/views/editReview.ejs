@@ -39,12 +39,12 @@
 
    <form action="/users/misResenias/edit/<%= resultado.id %> " method="POST" class="resenia">
    <% if (error) {  %> 
-        <p style="color: yellow;">Usuario o contraseña incorrecta</p>
+      <p style="color: greenyellow; font-weight: bold;">¡USUARIO O CONTRASEÑA INCORRECTA!</p>
    <% }  %> 
 
     <div>
       <label for="">Email: </label><br>
-      <input class="resenia" type="email" name="email" placeholder="Escriba aquí">
+      <input class="resenia" type="email" name="email" placeholder="Escriba aquí" required>
 
     </div>
 
@@ -61,7 +61,7 @@
 
     <div>
       <label for="">Puntaje (del 1 al 10, siendo 10 lo más alto)</label> <br>
-      <input class="puntaje" type="number" min="0" max="10" name="rating" placeholder="nº"> <br>
+      <input class="puntaje" type="number" min="0" max="10" name="rating" placeholder="nº" required> <br>
     </div>
     <input class="enviar" type="submit" value="Confirmar">
   </form>

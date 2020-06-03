@@ -6,140 +6,147 @@ const bcrypt = require('bcryptjs');
 const moduloLogin = require('../modulo-login')
 
 let usersController = {
-    createUser: function(req,res) {
-        res.render("registro")  
+    createUser: function (req, res) {
+        res.render("registro")
     },
-    storeUser:function(req,res){
+    storeUser: function (req, res) {
         let user = {
             name: req.body.name,
-            email:req.body.email,
+            email: req.body.email,
             birthday: req.body.birthday,
-            password:bcrypt.hashSync(req.body.password,10),
+            password: bcrypt.hashSync(req.body.password, 10),
         }
-        db.User.create(user)
-        .then(()=> {
-            res.redirect('./login')
+        db.User.findOne({
+            where: [{ email: user.email }]
+        }).then((emailIngresado) => {
+            let elmailestamal = []
+            if (emailIngresado != null) {
+                console.log("hola estoy aca!")
+                res.render('registro', {
+                    elmailestamal: elmailestamal
+                })
+            } else {
+                db.User.create(user)
+                    .then(() => {
+                        res.redirect('./login')
+                    })
+            }
         })
     },
-    login: function(req,res){
+    login: function (req, res) {
         res.render('login')
     },
-    myReviews: function(req,res){
+    myReviews: function (req, res) {
         moduloLogin.validar(req.body.email, req.body.password)
-        .then((usuario)=> {
-            let errores = []
-
-            // Vas a tener que hacer un if por cada cosa que quieras validar
-            if (usuario == null) {
-                errores.push('Usuario invalido!')
-                res.render('login',{
-                    errores:errores
-                })  // Deberias enviar a la vista con el formulario de login y compartir los errores e impirmirlos
-            }
-            //if ( el puntaje no es un numero)
-
-            else{
-                let id_user = usuario.id
-                db.Review.findAll({
-                    where: {
-                        id_user: id_user
-                    }
-                }).then((reseniasXusuario) =>{
-                    res.render('myReviews', {
-                        reseniasXusuario: reseniasXusuario
+            .then((usuario) => {
+                let errores = []
+                if (usuario == null) {
+                    res.render('login', {
+                        errores: errores
                     })
-                })
-            }    
-            
-        }) 
-    },
-    showEdit: function(req,res){
-        db.Review.findOne({
-            where: [{id: req.params.id}]
-        })
-        .then(resultado => {
-            res.render('editReview', {resultado:resultado, error: req.query.Error})
-        })
-    },
-    confirmEdit: function(req,res){
-        moduloLogin.validar(req.body.email, req.body.password)
-        .then(usuario => {
-            if (usuario != null) {
-        let updateR = {
-            text: req.body.comment,
-            rating: req.body.rating,
-            idR: req.params.id
-        }
+                }
+                else {
+                    let id_user = usuario.id
+                    db.Review.findAll({
+                        where: {
+                            id_user: id_user
+                        }
+                    }).then((reseniasXusuario) => {
+                        res.render('myReviews', {
+                            reseniasXusuario: reseniasXusuario
+                        })
+                    })
+                }
 
-        db.Review.update({
-            text: updateR.text,
-            rating: updateR.rating
-        },{
-            where: {
-                id: updateR.idR
-            }
-        })
-        .then(() => {
-            db.Review.findByPk(req.params.id)
-            .then(resultado => {
-                res.redirect('/users/login')
             })
-        })
-        } else {
-            res.redirect('/users/misResenias/edit/' + req.params.id + '?Error=true')
-        }
-    })
     },
-    deleteReview: function(req,res){
+    showEdit: function (req, res) {
         db.Review.findOne({
-            where: [{id: req.params.id}]
+            where: [{ id: req.params.id }]
         })
-        .then(resultado => {
-            res.render('deleteReview', {resultado:resultado, deleteId:req.params.id})
-        })
+            .then(resultado => {
+                res.render('editReview', { resultado: resultado, error: req.query.Error })
+            })
     },
-    confirmDelete: function(req,res){
+    confirmEdit: function (req, res) {
         moduloLogin.validar(req.body.email, req.body.password)
-        .then(usuario => {
-            if (usuario != null) {
-                db.Review.destroy({
-                    where: [{
-                        id: req.params.id,
-                    }]
-                })
-                res.redirect('/users/login');
-            } else {
-                res.redirect('/users/misResenias/delete/' + req.params.id)
-            }
-        })
+            .then(usuario => {
+                if (usuario != null) {
+                    let updateR = {
+                        text: req.body.comment,
+                        rating: req.body.rating,
+                        idR: req.params.id
+                    }
+
+                    db.Review.update({
+                        text: updateR.text,
+                        rating: updateR.rating
+                    }, {
+                        where: {
+                            id: updateR.idR
+                        }
+                    })
+                        .then(() => {
+                            db.Review.findByPk(req.params.id)
+                                .then(resultado => {
+                                    res.redirect('/users/login')
+                                })
+                        })
+                } else {
+                    res.redirect('/users/misResenias/edit/' + req.params.id + '?Error=true')
+                }
+            })
     },
-    buscar: function(req,res){
+    deleteReview: function (req, res) {
+        db.Review.findOne({
+            where: [{ id: req.params.id }]
+        })
+            .then(resultado => {
+                res.render('deleteReview', { resultado: resultado, deleteId: req.params.id, error: req.query.Error })
+            })
+    },
+    confirmDelete: function (req, res) {
+        moduloLogin.validar(req.body.email, req.body.password)
+            .then(usuario => {
+                if (usuario != null) {
+                    db.Review.destroy({
+                        where: [{
+                            id: req.params.id,
+                        }]
+                    })
+                    res.redirect('/users/login');
+                } else {
+                    res.redirect('/users/misResenias/delete/' + req.params.id + '?Error=true')
+                }
+            })
+    },
+    buscar: function (req, res) {
         res.render('buscadorDeUsuarios')
     },
-    detalle:function(req,res){
+    detalle: function (req, res) {
         db.User.findOne({
-            where: [{id: req.params.id}],
+            where: [{ id: req.params.id }],
             include: [{
                 association: 'User_Reviews'
             }]
         }).then(detail => {
             res.render('detalleUsuario', {
-                detail:detail,
+                detail: detail,
             })
-        
-           //agregar aca las resenias
+
+            //agregar aca las resenias
         })
     },
-    searchUserResults: function(req,res){
+    searchUserResults: function (req, res) {
         db.User.findAll({
-            where:{
+            where: {
                 [operadores.or]: {
-                    email: {[operadores.like]: "%" + req.query.searchUser + "%"},
-                    name: {[operadores.like]: "%" + req.query.searchUser + "%"}
+                    email: { [operadores.like]: "%" + req.query.searchUser + "%" },
+                    name: { [operadores.like]: "%" + req.query.searchUser + "%" }
                 }
             }
-        }).then(function(resultado){
-            res.render('searchUserResults',{
+        }).then(function (resultado) {
+            res.render('searchUserResults', {
                 users: resultado,
                 busqueda: req.query.searchUser
             })

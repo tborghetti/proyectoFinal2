@@ -35,21 +35,23 @@
 <body>
     <%- include('../partials/header') %>
     <main>
-    
     <form action="/users/misResenias/delete/<%= deleteId %> " method="POST" class="resenia">
         <h1 class="borrar">¡Borrá tu reseña!</h1>
         <p style="color: yellow;">Confirmá tu usuario para borrar la reseña</p> 
+        <% if (error) {  %> 
+            <p style="color: greenyellow; font-weight: bold;">¡USUARIO O CONTRASEÑA INCORRECTA!</p>
+       <% }  %> 
         <div class="uk-margin">
             <div class="uk-inline">
                 <span class="uk-form-icon" uk-icon="icon: user"></span>
-                <input class="uk-input" name="email" type="text"  placeholder="usuario">
+                <input class="uk-input" name="email" type="text"  placeholder="usuario" required>
             </div>
         </div>
     <!-- contraseña -->
         <div class="uk-margin">
             <div class="uk-inline">
                 <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-                <input class="uk-input" type="password" name="password" placeholder="contraseña">
+                <input class="uk-input" type="password" name="password" placeholder="contraseña" required>
             </div>
         </div>    
         <button type="submit" name="button" class="confirmar">Confirmar</button>
