@@ -1,6 +1,6 @@
 *{box-sizing: border-box;}
 main{
-    height: 525px;
+    min-height: calc(100vh - 110px);
     text-align: center;
 }
 

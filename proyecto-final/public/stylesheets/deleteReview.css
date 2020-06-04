@@ -18,7 +18,7 @@ button.confirmar{
 }
 main{
     text-align: center;
-    height: 525px;
+    min-height: calc(100vh - 110px);
 }
 main form input{
     text-align: left;

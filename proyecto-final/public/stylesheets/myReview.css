@@ -13,7 +13,7 @@ header#miResenia{
     justify-content: center;
 }
 main{
-    min-height: calc(100vh - 110px)
+    min-height: calc(100vh - 110px);
 }
 
 
