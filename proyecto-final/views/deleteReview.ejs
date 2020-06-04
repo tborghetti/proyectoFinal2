@@ -33,7 +33,21 @@
 
 </head>
 <body>
-    <%- include('../partials/header') %>
+    <header class="mainHeader">
+        <div class="dosPalabras">  
+        <a class="head" href= "/../veoVeo/home"><label for="">Inicio</label></a>
+          <a class="resenias" href= "../login">MyReviews</a>
+          </div>
+        <h1>Veo<a href="/../veoVeo/home"><img src="/images/logo.png" alt=""></a>Veo</h1>
+          <form class="form-buscador" action="../veoVeo/resultado" method="get" id="busqueda">
+            <input class="buscadorsecundario inputHidden" type="text" name="buscadorsecundario" placeholder="Buscador" value="">
+            <button type="submit">Enviar</button>
+            <i class="fas fa-search" id="lupita"></i>
+            <a href="../veoVeo/favoritas" ><i class="fas fa-heart"></i></a>
+            <a href="#offcanvas-derecho" uk-toggle><i class="fas fa-filter"></i></a>
+            <a href="/users/buscar" uk-toggle><i class="fas fa-users"></i></a>
+          </form>    
+        </header>
     <main>
     <form action="/users/misResenias/delete/<%= deleteId %> " method="POST" class="resenia">
         <h1 class="borrar">¡Borrá tu reseña!</h1>

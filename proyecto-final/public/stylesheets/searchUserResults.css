@@ -13,7 +13,7 @@ h1#resultados{
     margin-top:2%;
 }
 dl#detalles {
-    color: white;
+    color: white; 
     margin-left: 3%;
 }
 dl dt{
@@ -32,4 +32,22 @@ a.nombre:hover{
 hr{
     color: grey;
 }
-
+form.buscar {
+    margin-top: 10%;
+    text-align: center;
+}
+p.noHay{
+    color: grey;
+    font-size: 40px;
+    margin-top: 5%;
+}
+input.buscar{
+    width: 8%;
+    height: 35px;
+    border-radius: 8px;
+    margin: 1.5%;
+    background-color: yellow;
+    font-weight: bold;
+    font-size: 15px;
+    color: grey;
+}

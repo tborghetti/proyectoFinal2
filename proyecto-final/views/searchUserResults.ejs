@@ -68,7 +68,10 @@
             <hr>
        <% }  %>
     <% } else { %>
-        <p> No hemos encontrado un usuario</p>
+      <form action="/users/buscar" class="buscar"> 
+      <p class="noHay"> No hemos encontrado un usuario</p>
+      <input class="buscar" type="submit" value="Volver">
+      </form> 
     <% } %>
     
     </main> 
