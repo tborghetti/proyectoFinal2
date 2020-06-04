@@ -22,7 +22,7 @@ div.infoParticular{
 
 .ocultar{
   width: 58%;
-margin-left: 259px;
+  margin-left: 259px;
   display: block;
 
 }
@@ -136,7 +136,10 @@ article#otrosComentarios{
   width: 60%;
   justify-content: center;
 }
-
+article h4{
+  color: yellow;
+   
+}
 
 
 
