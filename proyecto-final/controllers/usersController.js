@@ -1,8 +1,6 @@
 let db = require('../database/models/index');
 let operadores = db.Sequelize.Op;
 const bcrypt = require('bcryptjs');
-// npm bcrypt requiero arriba
-//correr en terminal npm install bcryptjs
 const moduloLogin = require('../modulo-login')
 
 let usersController = {
@@ -21,7 +19,6 @@ let usersController = {
         }).then((emailIngresado) => {
             let elmailestamal = []
             if (emailIngresado != null) {
-                console.log("hola estoy aca!")
                 res.render('registro', {
                     elmailestamal: elmailestamal
                 })
@@ -123,20 +120,6 @@ let usersController = {
     buscar: function (req, res) {
         res.render('buscadorDeUsuarios')
     },
-    detalle: function (req, res) {
-        db.User.findOne({
-            where: [{ id: req.params.id }],
-            include: [{
-                association: 'User_Reviews'
-            }]
-        }).then(detail => {
-            res.render('detalleUsuario', {
-                detail: detail,
-            })
-
-            //agregar aca las resenias
-        })
-    },
     searchUserResults: function (req, res) {
         db.User.findAll({
             where: {
@@ -150,6 +133,20 @@ let usersController = {
                 users: resultado,
                 busqueda: req.query.searchUser
             })
+        })
+    },
+    detalle: function (req, res) {
+        db.User.findOne({
+            where: [{ id: req.params.id }],
+            include: [{
+                association: 'User_Reviews'
+            }]
+        }).then(detail => {
+            res.render('detalleUsuario', {
+                detail: detail,
+            })
+
+            //agregar aca las resenias
         })
     },
 }
