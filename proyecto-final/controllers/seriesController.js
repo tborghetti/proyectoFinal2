@@ -12,7 +12,6 @@ let seriesController = {
     },
     infoxserie: function (req, res) {
         let id_serie = req.query.id
-        console.log(id_serie)
         db.Review.findAll({
             where: [{
                 id_serie: req.query.id,
