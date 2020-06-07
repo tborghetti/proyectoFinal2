@@ -99,8 +99,8 @@ let usersController = {
             where: [{ id: req.params.id }]
         })
             .then(resultado => {
-                res.render('deleteReview', { resultado: resultado, deleteId: req.params.id, error: req.query.Error })
-            })
+            res.render('deleteReview', { resultado: resultado, error: req.query.Error })
+        })      
     },
     confirmDelete: function (req, res) {
         moduloLogin.validar(req.body.email, req.body.password)
