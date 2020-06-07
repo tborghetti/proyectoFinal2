@@ -78,10 +78,7 @@ let usersController = {
                         }
                     })
                         .then(() => {
-                            db.Review.findByPk(req.params.id)
-                                .then(resultado => {
-                                    res.redirect('/users/login')
-                                })
+                            res.redirect('/users/login')
                         })
                 } else {
                     res.redirect('/users/misResenias/edit/' + req.params.id + '?Error=true')
