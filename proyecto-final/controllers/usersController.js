@@ -69,18 +69,12 @@ let usersController = {
         moduloLogin.validar(req.body.email, req.body.password)
             .then(usuario => {
                 if (usuario != null) {
-                    let updateR = {
-                        text: req.body.comment,
-                        rating: req.body.rating,
-                        idR: req.params.id
-                    }
-
                     db.Review.update({
-                        text: updateR.text,
-                        rating: updateR.rating
+                        text: req.body.comment,
+                        rating: req.body.rating
                     }, {
                         where: {
-                            id: updateR.idR
+                            id: req.params.id
                         }
                     })
                         .then(() => {
